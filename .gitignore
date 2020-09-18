@@ -32,3 +32,9 @@ logs/
 .DS_Store
 Thumbs.db
 /target/
+netty-01-pure-bio/src/main/resources/
+netty-01-pure-bio/src/test/
+netty-01-pure-bio/target/
+netty-02-nio-basic/src/main/resources/
+netty-02-nio-basic/target/
+netty-02-nio-buffer/
