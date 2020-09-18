@@ -11,7 +11,7 @@ public class NIOIntBuffer {
         // 1. 声明 capacity=缓冲区容量
         int capacity = 20;
         // 2. IntBuffer是指缓冲区存放都是int类型的, 缓冲区是一个int数组;
-        /**
+        /*
          * Buffer的子类: 基本类型的除了 boolean, 都有
          *  ByteBuffer/ ShortBuffer/IntBuffer/LongBuffer
          *  FloatBuffer/DoubleBuffer/CharBuffer

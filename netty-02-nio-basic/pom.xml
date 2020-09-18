@@ -2,15 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>netty-serial</artifactId>
+        <groupId>com.niewj</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.niewj</groupId>
-    <artifactId>netty-serial</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>netty-01-pure-bio</module>
-        <module>netty-02-nio-basic</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>netty-02-nio-buffer</artifactId>
+
 
 </project>

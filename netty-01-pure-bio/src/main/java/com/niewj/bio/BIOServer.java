@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.channels.SelectionKey;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -13,30 +15,33 @@ import java.util.concurrent.Executors;
  */
 public class BIOServer {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         // 1. 处理请求的线程池
         ExecutorService requestPool = Executors.newFixedThreadPool(20);
-
-        // 2. 启动ServerSocket, 监听在7777端口
-        ServerSocket serverSocket = new ServerSocket(7777);
-        while (true) {
-            System.out.println("##@@==> 等待连接...");
-            Socket socket = serverSocket.accept();
-            System.out.println("##@@==> 收到客户端: [" + Thread.currentThread().getName() + "]");
-            // 3. 来一个客户端, 启动一个线程处理
-            requestPool.execute(() -> handle(socket));
+        try{
+            // 2. 启动ServerSocket, 监听在7777端口
+            ServerSocket serverSocket = new ServerSocket(7777);
+            while (true) {
+                System.out.println("##@@==> 等待连接...");
+                Socket socket = serverSocket.accept();
+                System.out.println("##@@==> 收到客户端: [" + Thread.currentThread().getName() + "]");
+                // 3. 来一个客户端, 启动一个线程处理
+                requestPool.execute(() -> handle(socket));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     /**
      * 处理客户端的线程执行的功能
-     * @param socket
+     * @param socket 接通的客户端socket
      */
     private static void handle(Socket socket) {
         String threadName = Thread.currentThread().getName();
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"))) {
-            String line = null;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8))) {
+            String line;
             while ((line = br.readLine()) != null) {
                 System.out.println("[" + threadName + "]==>\t" + line);
             }
