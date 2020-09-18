@@ -13,4 +13,11 @@
     </modules>
     <packaging>pom</packaging>
 
+    <!-- 这里一般有 maven 的默认配置，修改即可 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
 </project>
