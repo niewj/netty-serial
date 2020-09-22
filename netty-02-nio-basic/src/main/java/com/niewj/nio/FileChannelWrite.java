@@ -25,7 +25,7 @@ public class FileChannelWrite {
         byteBuffer.flip();
 
         // 5. 文件输出流
-        try(FileOutputStream fileOutputStream = new FileOutputStream(NIOConstant.FILE)){
+        try(FileOutputStream fileOutputStream = new FileOutputStream(NioConstant.FILE)){
             // 6. 拿到文件输出流的 FileChannel;
             FileChannel fileChannel = fileOutputStream.getChannel();
 

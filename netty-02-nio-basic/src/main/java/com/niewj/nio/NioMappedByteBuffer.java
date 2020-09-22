@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
  * MappedByteBuffer的子类还有个DirectByteBuffer和DirectByteBufferR
  * Created by niewj on 2020/9/21 11:09
  */
-public class NIOMappedByteBuffer {
+public class NioMappedByteBuffer {
 
     public static void main(String[] args) {
         String fileName = "E:\\map_modify.txt";

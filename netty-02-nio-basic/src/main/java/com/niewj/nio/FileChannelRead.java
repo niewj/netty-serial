@@ -2,7 +2,6 @@ package com.niewj.nio;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -17,7 +16,7 @@ public class FileChannelRead {
         ByteBuffer byteBuffer= ByteBuffer.allocate(1024);
 
         // 2. 文件输出流
-        try(FileInputStream fileInputStream = new FileInputStream(NIOConstant.FILE)){
+        try(FileInputStream fileInputStream = new FileInputStream(NioConstant.FILE)){
             // 3. 拿到文件输入流的 FileChannel;
             FileChannel fileChannel = fileInputStream.getChannel();
 

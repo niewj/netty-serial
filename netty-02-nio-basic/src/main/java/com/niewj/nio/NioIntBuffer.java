@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Created by niewj on 2020/9/18 9:48
  */
-public class NIOIntBuffer {
+public class NioIntBuffer {
     public static void main(String[] args) {
         // 1. 声明 capacity=缓冲区容量
         int capacity = 20;

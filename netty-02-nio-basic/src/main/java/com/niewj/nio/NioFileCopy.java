@@ -9,7 +9,7 @@ import java.nio.channels.FileChannel;
 /**
  * Created by niewj on 2020/9/21 10:23
  */
-public class NIOFileCopy {
+public class NioFileCopy {
     public static void main(String[] args) {
         String srcFile = "E:\\piantouqu.mp3";
         String destFile = "E:\\piantouqu_copy.mp3";
